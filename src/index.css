@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #003366;
+  --color-brand-brown: #996633;
+  --color-pastel-blue: #f2f6fa;
+  --color-pastel-brown: #fcf8f4;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cinzel: "Cinzel", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/60 border border-white/40 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-xl bg-slate-900/40 border border-white/10 shadow-xl;
+  }
+}
+
+.mesh-gradient {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 51, 102, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(153, 102, 51, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 51, 102, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(153, 102, 51, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+@keyframes mesh {
+  0% { transform: scale(1) translate(0px, 0px); }
+  33% { transform: scale(1.1) translate(30px, -50px); }
+  66% { transform: scale(0.9) translate(-20px, 20px); }
+  100% { transform: scale(1) translate(0px, 0px); }
+}
+
+.animate-mesh {
+  animation: mesh 20s infinite ease-in-out alternate;
+}
