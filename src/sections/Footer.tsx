@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-white border border-brand-brown rounded-xl flex items-center justify-center overflow-hidden p-1">
-                <img src="/logo-simbolo-IHT.png" alt="Logo Instituto Hermes Tupinambá" className="w-full h-full object-contain" />
+                <img src="./logo-simbolo-IHT.png" alt="Logo Instituto Hermes Tupinambá" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-montserrat font-bold text-[10px] tracking-[0.2em] text-white/70 uppercase leading-none mb-1">

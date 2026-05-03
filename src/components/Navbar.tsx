@@ -34,7 +34,7 @@ export default function Navbar() {
       )}>
         <a href="#home" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-white border border-brand-brown rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden p-1">
-            <img src="/logo-simbolo-IHT.png" alt="Logo Instituto Hermes Tupinambá" className="w-full h-full object-contain" />
+            <img src="./logo-simbolo-IHT.png" alt="Logo Instituto Hermes Tupinambá" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col hidden sm:flex">
             <span className="font-montserrat font-bold text-[10px] tracking-[0.2em] text-slate-500 uppercase leading-none mb-1">
