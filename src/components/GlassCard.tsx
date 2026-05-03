@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { cn } from '../utils/cn';
+import { ReactNode, Key } from 'react';
 
 interface GlassCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
+  key?: Key;
 }
 
 export default function GlassCard({ children, className, delay = 0 }: GlassCardProps) {
