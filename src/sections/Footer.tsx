@@ -1,4 +1,27 @@
-import { Instagram, Linkedin, Facebook, Heart } from 'lucide-react';
+import { Instagram, Linkedin, Facebook } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -6,8 +29,14 @@ export default function Footer() {
   return (
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-brand-blue text-slate-300">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-1">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid md:grid-cols-2 gap-12 mb-16"
+        >
+          <motion.div variants={itemVariants}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-white border border-brand-brown rounded-xl flex items-center justify-center overflow-hidden p-1">
                 <img src="./logo-simbolo-IHT.png" alt="Logo Instituto Hermes Tupinambá" className="w-full h-full object-contain" />
@@ -35,9 +64,9 @@ export default function Footer() {
                 <Facebook size={18} strokeWidth={1.5} />
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Navegação</h4>
             <ul className="space-y-4 text-sm">
               <li><a href="#home" className="hover:text-white transition-colors">Início</a></li>
@@ -45,35 +74,16 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-white transition-colors">Sobre Nós</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contato</a></li>
             </ul>
-          </div>
+          </motion.div>
+        </motion.div>
 
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Institucional</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Transparência</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Editais</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Relatórios Anuais</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Parceiros</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Newsletter</h4>
-            <p className="text-xs mb-4 text-slate-400">Receba atualizações sobre nossas iniciativas.</p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Seu e-mail"
-                className="bg-white/10 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-brand-brown outline-none text-white placeholder-white/50"
-              />
-              <button className="bg-brand-brown text-white p-2 rounded-lg hover:bg-[#a67340] transition-colors">
-                <Heart size={18} strokeWidth={1.5} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 pt-12 flex flex-col items-center gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="border-t border-white/10 pt-12 flex flex-col items-center gap-8"
+        >
           <p className="text-xs text-slate-500 text-center">
             &copy; {currentYear} Instituto Hermes Tupinambá. Todos os direitos reservados. CNPJ: 00.000.000/0001-00
           </p>
@@ -91,7 +101,7 @@ export default function Footer() {
               </span>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

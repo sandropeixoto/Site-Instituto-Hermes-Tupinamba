@@ -10,11 +10,39 @@ const images = [
   "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function Social() {
   return (
     <section className="py-24 px-6 relative overflow-hidden bg-pastel-brown">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6"
+        >
           <div>
             <h2 className="text-4xl font-black text-slate-900 mb-2">Siga no Instagram</h2>
             <p className="text-slate-600">Acompanhe nossas ações e eventos em tempo real.</p>
@@ -26,16 +54,19 @@ export default function Social() {
             <span>@inst.hermestupinamba</span>
             <Instagram size={20} className="group-hover:rotate-12 transition-transform" strokeWidth={1.5} />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+        >
           {images.map((img, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              variants={itemVariants}
               className="aspect-square rounded-2xl overflow-hidden glass group cursor-pointer"
             >
               <img
@@ -48,7 +79,7 @@ export default function Social() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

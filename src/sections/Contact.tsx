@@ -3,21 +3,55 @@ import { Instagram, MapPin, Mail, Phone } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import GlassCard from '../components/GlassCard';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 relative bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
             Vamos <span className="text-brand-blue">Conversar</span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Dúvidas, sugestões ou parcerias? Entre em contato e faça parte do nosso projeto.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-1 space-y-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid lg:grid-cols-3 gap-12"
+        >
+          <motion.div variants={fadeUpVariants} className="lg:col-span-1 space-y-8">
             <GlassCard className="h-full">
               <h3 className="text-2xl font-bold text-slate-900 mb-8">Informações</h3>
               
@@ -65,14 +99,14 @@ export default function Contact() {
                 </div>
               </div>
             </GlassCard>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-2">
+          <motion.div variants={fadeUpVariants} className="lg:col-span-2">
             <GlassCard>
               <ContactForm />
             </GlassCard>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
