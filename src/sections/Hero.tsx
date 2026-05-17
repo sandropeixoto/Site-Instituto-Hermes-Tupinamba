@@ -54,6 +54,7 @@ export default function Hero() {
               src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" 
               alt="Educação e Futuro"
               className="w-full h-full object-cover rounded-2xl shadow-inner"
+              referrerPolicy="no-referrer"
             />
           </div>
           

@@ -72,7 +72,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-slate-900">E-mail</p>
-                    <p className="text-slate-600">contato@hermestupinamba.org</p>
+                    <p className="text-slate-600">contato@iht.ong</p>
                   </div>
                 </div>
 
@@ -82,7 +82,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-slate-900">Telefone</p>
-                    <p className="text-slate-600">Informação em breve</p>
+                    <p className="text-slate-600">(91) 98116-0626</p>
                   </div>
                 </div>
               </div>

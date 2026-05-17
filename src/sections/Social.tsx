@@ -73,6 +73,7 @@ export default function Social() {
                 src={img}
                 alt="Feed Instagram"
                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 brightness-90 group-hover:brightness-100"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-brand-blue/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <Instagram className="text-white" strokeWidth={1.5} />

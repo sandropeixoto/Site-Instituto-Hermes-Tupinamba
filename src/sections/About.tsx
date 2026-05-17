@@ -62,6 +62,7 @@ export default function About() {
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" 
               alt="Sobre o Instituto"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
+              referrerPolicy="no-referrer"
             />
           </div>
           {/* Decorative shapes */}
