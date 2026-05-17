@@ -51,10 +51,9 @@ export default function Hero() {
           <div className="relative z-10 glass rounded-3xl p-4 md:p-8 aspect-square flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-brand-brown/20 mix-blend-overlay" />
             <img 
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" 
-              alt="Educação e Futuro"
+              src="./IMG-20260515-WA0006.jpg" 
+              alt="Equipe Ação Social - Expedição do Bem"
               className="w-full h-full object-cover rounded-2xl shadow-inner"
-              referrerPolicy="no-referrer"
             />
           </div>
           

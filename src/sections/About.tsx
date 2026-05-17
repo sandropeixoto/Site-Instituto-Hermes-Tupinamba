@@ -59,7 +59,7 @@ export default function About() {
         >
           <div className="glass rounded-[2rem] h-full overflow-hidden shadow-2xl relative z-10">
              <img 
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" 
+              src="./IMG-20260515-WA0003.jpg" 
               alt="Sobre o Instituto"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
               referrerPolicy="no-referrer"

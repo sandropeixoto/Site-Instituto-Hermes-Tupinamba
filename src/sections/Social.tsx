@@ -2,12 +2,8 @@ import { motion } from 'framer-motion';
 import { Instagram } from 'lucide-react';
 
 const images = [
-  "https://images.unsplash.com/photo-1577896851231-70ef14603e80?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1544648313-2719f395322a?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522661060204-85a7cbc66a7f?q=80&w=2072&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+  "./Img-insta01.jpg",
+  "./Img-insta02.jpg"
 ];
 
 const containerVariants = {
@@ -61,7 +57,7 @@ export default function Social() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+          className="grid grid-cols-2 gap-4 max-w-2xl mx-auto"
         >
           {images.map((img, index) => (
             <motion.div
