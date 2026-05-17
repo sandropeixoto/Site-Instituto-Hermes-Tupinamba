@@ -22,9 +22,8 @@ export default function ContactForm() {
     formState: { errors }
   } = useForm<FormData>();
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (_data: FormData) => {
     setIsSubmitting(true);
-    console.log('Form data:', data);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     setIsSubmitting(false);
